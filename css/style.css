@@ -372,12 +372,29 @@ button {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  animation: proofShellIn 320ms var(--ease-out) 360ms both;
 }
 
 .hero__proof li {
   padding: 20px;
-  background: rgba(9, 10, 11, 0.74);
-  backdrop-filter: blur(18px);
+  background: rgba(9, 10, 11, 0.72);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: proofItemIn 420ms var(--ease-out) both;
+}
+
+.hero__proof li:nth-child(1) {
+  animation-delay: 400ms;
+}
+
+.hero__proof li:nth-child(2) {
+  animation-delay: 445ms;
+}
+
+.hero__proof li:nth-child(3) {
+  animation-delay: 490ms;
 }
 
 .hero__proof strong,
@@ -498,8 +515,7 @@ body.motion-ready .service-card.is-visible:hover {
 .hero .eyebrow,
 .hero h1,
 .hero__lead,
-.hero__actions,
-.hero__proof {
+.hero__actions {
   animation: heroCopyIn 920ms var(--ease-out) both;
 }
 
@@ -517,10 +533,6 @@ body.motion-ready .service-card.is-visible:hover {
 
 .hero__actions {
   animation-delay: 540ms;
-}
-
-.hero__proof {
-  animation-delay: 480ms;
 }
 
 .button {
@@ -583,6 +595,30 @@ body.motion-ready .service-card.is-visible:hover {
   to {
     opacity: 1;
     filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes proofShellIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes proofItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -1385,6 +1421,7 @@ body.show-floating .floating-whatsapp {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
 }
