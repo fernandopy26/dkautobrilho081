@@ -232,7 +232,7 @@ button {
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(7, 8, 9, 0.88) 0%, rgba(7, 8, 9, 0.56) 48%, rgba(7, 8, 9, 0.14) 100%),
-    url("../imagens/simples.jpg") center / cover no-repeat;
+    url("../imagens/titulo.jpg") center / cover no-repeat;
   background-position: center calc(50% + var(--hero-shift));
 }
 
@@ -1279,7 +1279,7 @@ body.show-floating .floating-whatsapp {
     padding: 104px 16px 34px;
     background:
       linear-gradient(180deg, rgba(7, 8, 9, 0.58) 0%, rgba(7, 8, 9, 0.9) 74%),
-      url("../imagens/simples.jpg") center / cover no-repeat;
+      url("../imagens/titulo.jpg") center / cover no-repeat;
   }
 
   .hero h1 {
